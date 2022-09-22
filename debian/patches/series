@@ -1,0 +1,5 @@
+638570_lang_russian.patch
+681116_multiarch_manpage_template.patch
+831831_docbook-xsl-mandir.patch
+765567_non-recursive_string_subst.patch
+0005-catalog.xml-Compatibility-with-1.79.1-or-earlier.patch

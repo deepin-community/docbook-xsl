@@ -1,0 +1,18 @@
+# See uscan(1) for format
+#
+# NOTE: You need to call the get-orig-source target in debian/rules.
+# NOTE: uupdate will *NOT* work, because upstream splits the packages.
+# WARNING: The project has migrated away from SF thus the current watch
+#          is not working! The latest version is at least v1.79.2.
+#
+# Because the usual sf.net watch file syntax fails, use the ftp site.
+
+#version=4
+#opts="filenamemangle=s%(?:.*?)?v?(\d[\d.]*)\.tar\.gz%docbook-xsl-$1.tar.gz%" \
+# https://github.com/docbook/xslt10-stylesheets/releases \
+#  (?:.*?/)?v?(\d[\d.]*)\.tar\.gz debian uupdate
+
+version=3
+opts=dversionmangle=s/\+dfsg$// \
+ http://sf.net/docbook/docbook-xsl-([\d\.]+)\.tar\.(?:bz2|gz) \
+ debian /bin/sh debian/get-orig-source.sh
